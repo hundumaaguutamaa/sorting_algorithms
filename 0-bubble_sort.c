@@ -27,7 +27,10 @@ void bubble_sort(int *array, size_t size)
                 array[j + 1] = temp_val;
                 print_array(array, size);
             }
-        }    
+        } 
+        if (sorted_val == 0)
+        {
+            return;
+        }   
     }
 }
-
