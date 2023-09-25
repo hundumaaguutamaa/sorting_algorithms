@@ -2,11 +2,11 @@
 
 /**
  * swap_int - Swaps two array elements.
- * @a: First array element.
+ * @a: Array element.
  * @b: Second array element.
  */
 
-void swap(int *a, int *b)
+void swap_int(int *a, int *b)
 {
 	int temp;
 
@@ -17,8 +17,6 @@ void swap(int *a, int *b)
 
 /**
  * lomuto_partition - Partition an array of integers
- * Sorts a (portion of an) array, divides it 
- * into partitions, then sorts those.
  * @array: Array of integers.
  * @size: Size array.
  * @l: First index of array.
@@ -26,7 +24,7 @@ void swap(int *a, int *b)
  *
  * Return: New index position.
  */
-int l_partition(int *array, size_t size, int l, int h)
+int lomuto_partition(int *array, size_t size, int l, int h)
 {
 	int pivot = array[h], i = l, j;
 
@@ -51,11 +49,11 @@ int l_partition(int *array, size_t size, int l, int h)
 }
 
 /**
- * lomuto_sort - Implement the quick sort algorithm. 
- * @array: Array.
- * @size: Size of the array. 
- * @l: First index of the array.
- * @h: Last index of the array.
+ * lomuto_sort - Implement the quick sort algorithm.
+ * @array: Array
+ * @size: Size of the array
+ * @l: first index of the array
+ * @h: Last index of the array
  * 
  * Return: Index of arrays
  */
@@ -66,7 +64,7 @@ void lomuto_sort(int *array, size_t size, int l, int h)
 
 	if (l < h)
 	{
-		i = l_partition(array, size, l, h);
+		i = lomuto_partition(array, size, l, h);
 		lomuto_sort(array, size, l, i - 1);
 		lomuto_sort(array, size, i + 1, h);
 	}
@@ -74,8 +72,8 @@ void lomuto_sort(int *array, size_t size, int l, int h)
 
 /**
  * quick_sort - Sort an array of integers in ascending order.
- * @array: An array. 
- * @size: Aarray size. 
+ * @array: Array
+ * @size: Size of the array
  * 
  * Return: 0
  */
